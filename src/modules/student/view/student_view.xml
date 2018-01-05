@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data.xml>
+<vopen>
+	<!-- Student -->
+	<view model="Student.Student" type="list" id="view_student_list" priority="10">
+		<header>modules.student.view.StudentSummary</header>
+		<list>
+			<field name="name"/>
+			<field name="toan"/>
+			<field name="ly"/>
+			<field name="hoa"/>
+			<field name="tong_diem"/>
+			<field name="xep_loai"/>
+			<field name="isActive"/>
+			<field name="subjects"/>
+			<field name="student_class"/>
+			<field name="ngay_nhap_hoc"/>
+			<field name="button_test"/>
+		</list>
+		<footer>modules.student.view.StudentSummary</footer>
+	</view>
+	<view model="Student.Student" type="form" id="view_student_form" columns="2" priority="10">
+		<group title="Student Info" colspan="1">
+			<field name="name"/>
+			<field name="student_class" view_id = "view_student_class_form"/>
+			<field name="subjects"/>
+			<field name="isActive"/>
+			<field name="note"/>
+			<field name="button_test"/>
+		</group>
+		<group title="Điểm" colspan="1">
+			<field name="toan"/>
+			<field name="ly"/>
+			<field name="hoa"/>
+			<field name="tong_diem"/>
+			<field name="xep_loai"/>
+		</group>
+	</view>
+	<window model="Student.Student"  id="window_student" title="Student Manager">
+		<filter></filter>
+		<sort_by>name</sort_by>
+		<views>list,form</views>
+	</window>
+	<!-- Class -->
+	<view model="Student.StudentClass" type="list" id="view_student_class_list" priority="10">
+		<list>
+			<field name="name"/>
+		</list>
+	</view>
+	<view model="Student.StudentClass" type="form" id="view_student_class_form" columns="2" priority="10">
+		<group title="Class Info" colspan="2">
+			<field name="name"/>
+			<field name="students">
+				<view type="list">
+					<list>
+						<field name="name"/>
+						<field name="toan"/>
+						<field name="ly"/>
+						<field name="hoa"/>
+						<field name="subjects"/>
+					</list>
+				</view>
+				<view type="form" columns="2">
+					<group title="Student Info" colspan="2">
+						<field name="name"/>
+						<field name="toan"/>
+						<field name="ly"/>
+						<field name="hoa"/>
+						<field name="tong_diem"/>
+						<field name="xep_loai"/>
+						<field name="subjects"/>
+					</group>
+				</view>
+			</field>
+		</group>
+	</view>
+	<window model="Student.StudentClass"  id="window_student_class" title="Class Manager">
+		<filter></filter>
+		<sort_by>name</sort_by>
+		<views>list,form</views>
+	</window>
+	<!-- Subject -->
+	<view model="Student.Subject" type="list" id="view_student_subject_list" priority="10">
+		<list>
+			<field name="name"/>
+			<field name="students"/>
+		</list>
+	</view>
+	<view model="Student.Subject" type="form" id="view_student_subject_form" columns="2" priority="10">
+		<group title="Class Info" colspan="2">
+			<field name="name"/>
+			<field name="students"/>
+		</group>
+	</view>
+	<window model="Student.Subject"  id="window_student_subject" title="Subject Manager">
+		<filter></filter>
+		<sort_by>name</sort_by>
+		<views>list,form</views>
+	</window>
+</vopen>

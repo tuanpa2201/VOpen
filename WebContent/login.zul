@@ -1,0 +1,180 @@
+<?page title="Vopen - Login" contentType="text/html;charset=UTF-8" id="extr-page"?>
+		<?meta charset="utf-8"?>
+		<?meta name="description" content="VOPEN - VIETEK"?>
+		<?meta name="author" content="TUANPA - VIETEK"?>
+		<?meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"?>
+		
+		<!-- #CSS Links -->
+		<!-- Basic Styles -->
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css"?>
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css"?>
+
+		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css"?>
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css"?>
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css"?>
+
+		<!-- SmartAdmin RTL Support -->
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"?> 
+
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/vopen.css"?>
+
+		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css"?>
+
+		<!-- #FAVICONS -->
+		<?link rel="shortcut icon" href="img/favicon/iconvietek.ico" type="image/x-icon"?>
+		<?link rel="icon" href="img/favicon/iconvietek.ico" type="image/x-icon"?>
+
+		<!-- #GOOGLE FONT -->
+		<?link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700"?>
+
+		<!-- #APP SCREEN / ICONS -->
+		<!-- Specifying a Webpage Icon for Web Clip 
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<?link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png"?>
+		<?link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png"?>
+		<?link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png"?>
+		<?link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png"?>
+		
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<?meta name="apple-mobile-web-app-capable" content="yes"?>
+		<?meta name="apple-mobile-web-app-status-bar-style" content="black"?>
+		
+		<!-- Startup image for web apps -->
+		<?link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)"?>
+		<?link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)"?>
+		<?link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)"?>
+		<?script type="text/javascript" src="js/pagesetup.js" ?>
+		
+<zk xmlns:w="client" xmlns:n="native" xmlns:ca="client/attribute">
+	<div id="main" style="padding-top:1px"  apply="base.view.LoginController">
+				
+			<!-- MAIN CONTENT -->
+			<n:div id="content" class="container">
+			<div id="divMain">
+				<div id="divLanguage" zclass="none">
+						</div>
+				<n:div class="row" style="margin-top: 100px">
+					<n:div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
+						<n:img src="img/logo_vietek.png"/>
+						<n:h1 class="semi-bold"><label zclass="none" style="font-size: 17px;border-top-style: groove;padding-top: 5px">Khai thác, kết nối tất cả thiết bị trên một nền tảng đồng nhất - VOPEN</label></n:h1>
+						<n:div style="margin-top: 30px">
+							<n:div class="pull-left login-desc-box-0">
+								<n:div class="login-app-icons" style="margin-top: 1px;margin-bottom: 95px;" >
+									<button zclass="none" class="btn btn-sm" style="background: #C64E4F;color: white" href="http://vietek.com.vn/">Tìm hiểu thêm</button>
+								</n:div>
+							<n:div class="col-xs-12 col-sm-12 col-md-6" style="width:100%">
+								<n:h5 class="about-heading"><label zclass="none">Contact</label></n:h5>
+								<n:p>
+									Vietek jsc
+									<n:br></n:br>
+									3B floor, 21 Dai Tu, Hoang Mai, Ha Noi
+								</n:p>
+								<n:h5 class="about-heading"><label zclass="none">Support</label></n:h5>
+								<n:p>
+									MB: 0924.124.555 - MN: 0937.851.999
+									<n:br></n:br>
+									Tel:  042.123.6622
+									<n:br></n:br>
+									Email: info@vietek.com.vn
+								</n:p>
+							</n:div>
+							</n:div>
+							<n:div class="pull-right login-desc-box-2" style="margin-right: 48px">
+							<n:img src="img/app_solution.png"  alt="" style="width: 420px; margin-top: 30px;"/>
+							</n:div>
+						</n:div>
+
+				
+
+					</n:div>
+					
+					<n:div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+						<n:div class="well no-padding">
+							<n:form class="smart-form client-form">
+								<div zclass="none">
+									<n:header>
+										<label id ="lbllogin" zclass="none">Đăng Nhập</label>
+									</n:header>
+									<n:fieldset>
+										
+										<n:section>
+											<label id="lbluserName" class="label">Tên đăng nhập</label>
+											<n:label class="input"> <n:i class="icon-append fa fa-user"></n:i>
+												<textbox type="text" id="tbUser" placeholder="Tên đăng nhập" name ="username"></textbox>
+												<n:b class="tooltip tooltip-top-right"><n:i class="fa fa-user txt-color-teal"></n:i> Please enter email address/username</n:b></n:label>
+										</n:section>
+	
+										<n:section>
+											<label id="lblPass" class="label">Mật khẩu</label>
+											<n:label class="input"> <n:i class="icon-append fa fa-lock"></n:i>
+												<textbox type="password" id="tbPass" placeholder="Mật khẩu"></textbox>
+												<n:b class="tooltip tooltip-top-right"><n:i class="fa fa-lock txt-color-teal"></n:i> Enter your password</n:b> </n:label>
+											<div class="note" style="display: none;">
+												<label id="lblfoget" class="label"></label>
+											</div>
+											
+										</n:section>
+										<checkbox label="Remember me" checked="true" id = "cbRememberMe"></checkbox>
+									</n:fieldset>
+									<n:footer>
+										<button zclass="none" sclass="btn btn-primary" id = "btnLogin"></button>
+									</n:footer>
+								</div>
+							</n:form>
+
+						</n:div>
+					</n:div>
+				</n:div>
+				</div>
+			</n:div>
+
+		</div>
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+		<script src="js/plugin/pace/pace.min.js"></script>
+
+	    <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+	    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script> if (!window.jQuery) { document.write('<script src="js/libs/jquery-2.1.1.min.js"></script>');} </script>
+
+	    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script> if (!window.jQuery.ui) { document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"></script>');} </script>
+
+		<!-- IMPORTANT: APP CONFIG -->
+		<script src="js/app.config.js"></script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events 		
+		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> -->
+
+		<!-- BOOTSTRAP JS -->		
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+		
+		<!-- JQUERY MASKED INPUT -->
+		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+		
+		<!--[if IE 8]>
+			
+			<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+			
+		<![endif]-->
+
+		<!-- MAIN APP JS FILE -->
+		<script src="js/app.min.js"></script>
+
+		<script type="text/javascript">
+			$("html").attr("id", "extr-page");
+			$(document).ready(function() {
+				$("body").addClass("smart-style animated fadeInDown");
+			})
+		</script>
+		<script type="text/javascript"  defer="true">
+			$("#" + zk.Widget.$('$tbPass').$n().id).change(function(value) {
+				var t = zk.Widget.$('$tbPass');
+				t.updateChange_();
+			});
+		</script>
+</zk>

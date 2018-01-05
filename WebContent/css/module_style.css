@@ -1,0 +1,9 @@
+.box-shadow-preview{ 
+    position: relative; 
+    background-color: #FFFFFF; 
+    border-width: 5px; 
+    border-style: outsetOutset; 
+    border-color: #AADD9D; 
+    border-radius: 7px; 
+    box-shadow: 0px 1px 4px 0px #99A3AD, 0px 0px 40px #EEEEEE; 
+}

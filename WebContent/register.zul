@@ -1,0 +1,201 @@
+<?page title="Vity - Portal" contentType="text/html;charset=UTF-8" id="extr-page"?>
+		<?meta charset="utf-8"?>
+		<?meta name="description" content="VOPEN - VIETEK"?>
+		<?meta name="author" content="TUANPA - VIETEK"?>
+		<?meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"?>
+		
+		<!-- #CSS Links -->
+		<!-- Basic Styles -->
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css"?>
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css"?>
+
+		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css"?>
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css"?>
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css"?>
+
+		<!-- SmartAdmin RTL Support -->
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"?> 
+
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/vopen.css"?>
+
+		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css"?>
+
+		<!-- #FAVICONS -->
+		<?link rel="shortcut icon" href="img/favicon/iconvietek.ico" type="image/x-icon"?>
+		<?link rel="icon" href="img/favicon/iconvietek.ico" type="image/x-icon"?>
+
+		<!-- #GOOGLE FONT -->
+		<?link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700"?>
+
+		<!-- #APP SCREEN / ICONS -->
+		<!-- Specifying a Webpage Icon for Web Clip 
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<?link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png"?>
+		<?link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png"?>
+		<?link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png"?>
+		<?link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png"?>
+		
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<?meta name="apple-mobile-web-app-capable" content="yes"?>
+		<?meta name="apple-mobile-web-app-status-bar-style" content="black"?>
+		
+		<!-- Startup image for web apps -->
+		<?link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)"?>
+		<?link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)"?>
+		<?link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)"?>
+		<?script type="text/javascript" src="js/pagesetup.js" ?>
+		
+<zk xmlns:w="client" xmlns:n="native" xmlns:ca="client/attribute">
+	<n:div id="main" role="main">
+
+			<!-- MAIN CONTENT -->
+			<n:div id="content" class="container">
+
+				<n:div class="row">
+					<n:div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 hidden-xs hidden-sm">
+						<n:h1 class="txt-color-red login-header-big">SmartAdmin</n:h1>
+						<n:div class="hero">
+
+							<n:div class="pull-left login-desc-box-l">
+								<n:h4 class="paragraph-header">It's Okay to be Smart. Experience the simplicity of SmartAdmin, everywhere you go!</n:h4>
+								<n:div class="login-app-icons">
+									<n:a href="javascript:void(0);" class="btn btn-danger btn-sm">Frontend Template</n:a>
+									<n:a href="javascript:void(0);" class="btn btn-danger btn-sm">Find out more</n:a>
+								</n:div>
+							</n:div>
+							<n:img src="img/app_solution.png" alt="" class="pull-right display-image" style="width:210px"/>
+							
+						</n:div>
+
+						<n:div class="row">
+							<n:div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+								<n:h5 class="about-heading">About SmartAdmin - Are you up to date?</n:h5>
+								<n:p>
+									Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
+								</n:p>
+							</n:div>
+							<n:div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+								<n:h5 class="about-heading">Not just your average template!</n:h5>
+								<n:p>
+									Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi voluptatem accusantium!
+								</n:p>
+							</n:div>
+						</n:div>
+
+					</n:div>
+					<n:div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+						<n:div class="well no-padding">
+
+							<n:form action="php/demo-register.php" id="smart-form-register" class="smart-form client-form">
+								<n:header>
+									Registration is FREE*
+								</n:header>
+
+								<n:fieldset>
+									<n:section>
+										
+										<label id="lbluserName1" class="label">Tên đăng nhập</label>
+											<n:label class="input"> <n:i class="icon-append fa fa-user"></n:i>
+												<textbox type="text" id="tbUser1" placeholder="Tên đăng nhập" name ="username"></textbox>
+												<n:b class="tooltip tooltip-top-right"><n:i class="fa fa-user txt-color-teal"></n:i> Please enter email address/username</n:b></n:label>
+										
+									</n:section>
+
+									<n:section>
+										<label id="lbluserName2" class="label">Tên đăng nhập</label>
+											<n:label class="input"> <n:i class="icon-append fa fa-user"></n:i>
+												<textbox type="text" id="tbUser2" placeholder="Tên đăng nhập" name ="username"></textbox>
+												<n:b class="tooltip tooltip-top-right"><n:i class="fa fa-user txt-color-teal"></n:i> Please enter email address/username</n:b></n:label>
+									</n:section>
+
+									<n:section>
+										<label id="lbluserName3" class="label">Tên đăng nhập</label>
+											<n:label class="input"> <n:i class="icon-append fa fa-user"></n:i>
+												<textbox type="text" id="tbUser3" placeholder="Tên đăng nhập" name ="username"></textbox>
+												<n:b class="tooltip tooltip-top-right"><n:i class="fa fa-user txt-color-teal"></n:i> Please enter email address/username</n:b></n:label>
+									</n:section>
+
+									<n:section>
+										<label id="lbluserName4" class="label">Tên đăng nhập</label>
+											<n:label class="input"> <n:i class="icon-append fa fa-user"></n:i>
+												<textbox type="text" id="tbUser4" placeholder="Tên đăng nhập" name ="username"></textbox>
+												<n:b class="tooltip tooltip-top-right"><n:i class="fa fa-user txt-color-teal"></n:i> Please enter email address/username</n:b></n:label>
+									</n:section>
+								</n:fieldset>
+
+								<n:fieldset>
+									<n:div class="row">
+										<n:section class="col col-6">
+											<label id="lbluserName5" class="label">Tên đăng nhập</label>
+											<n:label class="input"> <n:i class="icon-append fa fa-user"></n:i>
+												<textbox type="text" id="tbUser5" placeholder="Tên đăng nhập" name ="username"></textbox>
+												<n:b class="tooltip tooltip-top-right"><n:i class="fa fa-user txt-color-teal"></n:i> Please enter email address/username</n:b></n:label>
+										</n:section>
+										<n:section class="col col-6">
+											<label id="lbluserName6" class="label">Tên đăng nhập</label>
+											<n:label class="input"> <n:i class="icon-append fa fa-user"></n:i>
+												<textbox type="text" id="tbUser6" placeholder="Tên đăng nhập" name ="username"></textbox>
+												<n:b class="tooltip tooltip-top-right"><n:i class="fa fa-user txt-color-teal"></n:i> Please enter email address/username</n:b></n:label>
+										</n:section>
+									</n:div>
+
+									<n:div class="row">
+										<n:section class="col col-6">
+											<n:label class="select">
+												<n:select name="gender">
+													<n:option value="0" selected="" disabled="">Gender</n:option>
+													<n:option value="1">Male</n:option>
+													<n:option value="2">Female</n:option>
+													<n:option value="3">Prefer not to answer</n:option>
+												</n:select> <n:i></n:i> </n:label>
+										</n:section>
+										<n:section class="col col-6">
+											<n:label class="input"> <n:i class="icon-append fa fa-calendar"></n:i>
+												<label id="lbluserName7" class="label">Tên đăng nhập</label>
+											<n:label class="input"> <n:i class="icon-append fa fa-user"></n:i>
+												<textbox type="text" id="tbUser7" placeholder="Tên đăng nhập" name ="username"></textbox>
+												<n:b class="tooltip tooltip-top-right"><n:i class="fa fa-user txt-color-teal"></n:i> Please enter email address/username</n:b></n:label>
+											</n:label>
+										</n:section>
+									</n:div>
+
+									<n:section>
+										
+									</n:section>
+								</n:fieldset>
+								<n:footer>
+									<n:button type="submit" class="btn btn-primary">
+										Register
+									</n:button>
+								</n:footer>
+
+								<n:div class="message">
+									<n:i class="fa fa-check"></n:i>
+									<n:p>
+										Thank you for your registration!
+									</n:p>
+								</n:div>
+							</n:form>
+
+						</n:div>
+						<n:p class="note text-center">*FREE Registration ends on October 2015.</n:p>
+						<n:h5 class="text-center">- Or sign in using -</n:h5>
+						<n:ul class="list-inline text-center">
+							<n:li>
+								<n:a href="javascript:void(0);" class="btn btn-primary btn-circle"><n:i class="fa fa-facebook"></n:i></n:a>
+							</n:li>
+							<n:li>
+								<n:a href="javascript:void(0);" class="btn btn-info btn-circle"><n:i class="fa fa-twitter"></n:i></n:a>
+							</n:li>
+							<n:li>
+								<n:a href="javascript:void(0);" class="btn btn-warning btn-circle"><n:i class="fa fa-linkedin"></n:i></n:a>
+							</n:li>
+						</n:ul>
+					</n:div>
+				</n:div>
+			</n:div>
+
+		</n:div>
+</zk>

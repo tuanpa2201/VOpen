@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data.xml>
+<vopen>
+	<!-- Root menu -->
+	<record model="Sys.Menu" uuid="sys_root">
+		<field name="name">System</field>
+		<field name="sequence">1000</field>
+		<field name="icon">fa-cog</field>
+	</record>
+	<record model="Sys.Menu" uuid="sys_user_root">
+		<field name="name">User management</field>
+		<field name="parentId">sys_root</field>
+		<field name="sequence">10</field>
+	</record>
+	<record model="Sys.Menu" uuid="sys_company_root">
+		<field name="name">Company management</field>
+		<field name="parentId">sys_root</field>
+		<field name="sequence">20</field>
+	</record>
+	<record model="Sys.Menu" uuid="sys_menu_action_root">
+		<field name="name">Menu management</field>
+		<field name="parentId">sys_root</field>
+		<field name="sequence">30</field>
+	</record>
+	<record model="Sys.Menu" uuid="sys_sequence_action_root">
+    <field name="name">Sequence management</field>
+    <field name="parentId">sys_root</field>
+    <field name="sequence">60</field>
+  </record>
+	<!-- User Management -->
+	<record model="Sys.Action" uuid="sys_user_action">
+		<field name="name">User Management</field>
+		<field name="window">window_sys_user</field>
+	</record>
+	<record model="Sys.Menu" uuid="sys_user">
+		<field name="name">User Management</field>
+		<field name="parentId">sys_user_root</field>
+		<field name="sequence">10</field>
+		<field name="action">sys_user_action</field>
+	</record>
+
+	<record model="Sys.Action" uuid="sys_group_action">
+		<field name="name">Group Management</field>
+		<field name="window">window_sys_group</field>
+	</record>
+	<record model="Sys.Menu" uuid="sys_group">
+		<field name="name">Group Management</field>
+		<field name="parentId">sys_user_root</field>
+		<field name="sequence">20</field>
+		<field name="action">sys_group_action</field>
+	</record>
+	<!-- Company Management -->
+	<record model="Sys.Action" uuid="sys_company_action">
+		<field name="name">Company Management</field>
+		<field name="window">window_sys_company</field>
+	</record>
+	<record model="Sys.Menu" uuid="sys_company">
+		<field name="name">Company Management</field>
+		<field name="parentId">sys_company_root</field>
+		<field name="sequence">10</field>
+		<field name="action">sys_company_action</field>
+	</record>
+
+	<!-- Menu & Action -->
+	<record model="Sys.Action" uuid="sys_menu_action">
+		<field name="name">Menu Management</field>
+		<field name="window">window_sys_menu</field>
+	</record>
+	<record model="Sys.Menu" uuid="sys_menu">
+		<field name="name">Menu Management</field>
+		<field name="parentId">sys_menu_action_root</field>
+		<field name="sequence">10</field>
+		<field name="action">sys_menu_action</field>
+	</record>
+
+	<record model="Sys.Action" uuid="sys_action_action">
+		<field name="name">Action Management</field>
+		<field name="window">window_sys_action</field>
+	</record>
+	<record model="Sys.Menu" uuid="sys_action">
+		<field name="name">Action Management</field>
+		<field name="parentId">sys_menu_action_root</field>
+		<field name="sequence">20</field>
+		<field name="action">sys_action_action</field>
+	</record>
+
+	<record model="Sys.Action" uuid="sys_rule_action">
+		<field name="name">Rule Management</field>
+		<field name="window">window_sys_rule</field>
+	</record>
+	<record model="Sys.Menu" uuid="sys_rule">
+		<field name="name">Rule Management</field>
+		<field name="parentId">sys_menu_action_root</field>
+		<field name="sequence">30</field>
+		<field name="action">sys_rule_action</field>
+	</record>
+
+	<record model="Sys.Menu" uuid="sys_data_root">
+		<field name="name">System Data</field>
+		<field name="parentId">sys_root</field>
+		<field name="sequence">40</field>
+	</record>
+
+	<record model="Sys.Action" uuid="sys_monitor_action">
+		<field name="name">System Monitor</field>
+		<field name="viewClass">modules.sys.view.SysMonitor</field>
+	</record>
+	<record model="Sys.Menu" uuid="sys_monitor_root">
+		<field name="name">System Monitor</field>
+		<field name="parentId">sys_root</field>
+		<field name="sequence">50</field>
+		<field name="action">sys_monitor_action</field>
+	</record>	
+		
+	<record model="Sys.Action" uuid="sys_file_action">
+		<field name="name">Files</field>
+		<field name="window">window_sys_file</field>
+	</record>
+
+	<record model="Sys.Menu" uuid="sys_file">
+		<field name="name">Files</field>
+		<field name="parentId">sys_data_root</field>
+		<field name="sequence">10</field>
+		<field name="action">sys_file_action</field>
+	</record>
+
+	<record model="Sys.Action" uuid="window_sys_address">
+		<field name="name">Addresses</field>
+		<field name="window">window_sys_address</field>
+	</record>
+	<record model="Sys.Menu" uuid="sys_address">
+		<field name="name">Addresses</field>
+		<field name="parentId">sys_data_root</field>
+		<field name="sequence">40</field>
+		<field name="action">window_sys_address</field>
+	</record>
+	<!-- SysUser records -->
+	<record model="Sys.User" uuid="sys_user_admin">
+		<field name="username">admin</field>
+		<field name="password">827ccb0eea8a706c4c34a16891f84e7b</field>
+		<field name="name">Administrator</field>
+	</record>
+	<record model="Sys.User" uuid="sys_user_superuser">
+		<field name="username">SuperUser</field>
+		<field name="password">123qwe</field>
+		<field name="name">SuperUser</field>
+	</record>
+
+	<!-- Company Management -->
+	<record model="Sys.Menu" uuid="sys_root">
+		<field name="name">System</field>
+		<field name="sequence">1000</field>
+	</record>
+
+	<record model="Sys.Company" uuid="company_root">
+		<field name="name">SOpen</field>
+	</record>
+
+	<!-- Notification -->
+	<record model="Sys.Menu" uuid="sys_notification_root">
+		<field name="name">Notification</field>
+		<field name="parentId">sys_root</field>
+		<field name="sequence">50</field>
+	</record>
+	<record model="Sys.Action" uuid="window_list_notification">
+        <field name="name">Notification</field>
+        <field name="window">window_list_notification</field>
+    </record>
+    <record model="Sys.Menu" uuid="sys_notification_list">
+        <field name="name">Notification</field>
+        <field name="parentId">sys_notification_root</field>
+        <field name="sequence">30</field>
+        <field name="action">window_list_notification</field>
+    </record>
+    
+  <record model="Sys.Action" uuid="window_list_sequence">
+      <field name="name">Sequence</field>
+      <field name="window">window_list_sequence</field>
+  </record>
+  <record model="Sys.Menu" uuid="Sequence_list">
+      <field name="name">Sequence</field>
+      <field name="parentId">sys_sequence_action_root</field>
+      <field name="sequence">10</field>
+      <field name="action">window_list_sequence</field>
+  </record>
+  <record model="Sys.Action" uuid="window_list_sequence_detail">
+      <field name="name">Sequence Detail</field>
+      <field name="window">window_list_sequence_detail</field>
+  </record>
+  <record model="Sys.Menu" uuid="Sequence_Detail_list">
+      <field name="name">Sequence Detail</field>
+      <field name="parentId">sys_sequence_action_root</field>
+      <field name="sequence">20</field>
+      <field name="action">window_list_sequence_detail</field>
+  </record>
+</vopen>

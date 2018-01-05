@@ -1,0 +1,29 @@
+<zk xmlns:w="client" xmlns:n="native">
+	<n:div class="row">
+		<n:div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+			<n:h1 class="page-title txt-color-blueDark"><n:i class="fa-fw fa fa-home"></n:i> Dashboard <n:span>> My Dashboard</n:span></n:h1>
+		</n:div>
+		<n:div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+			<n:ul id="sparks" class="">
+				<n:li class="sparks-info">
+					<n:h5> My Income <n:span class="txt-color-blue">$47,171</n:span></n:h5>
+					<n:div class="sparkline txt-color-blue hidden-mobile hidden-md hidden-sm">
+						1300, 1877, 2500, 2577, 2000, 2100, 3000, 2700, 3631, 2471, 2700, 3631, 2471
+					</n:div>
+				</n:li>
+				<n:li class="sparks-info">
+					<n:h5> Site Traffic <n:span class="txt-color-purple"><n:i class="fa fa-arrow-circle-up"></n:i>45%</n:span></n:h5>
+					<n:div class="sparkline txt-color-purple hidden-mobile hidden-md hidden-sm">
+						110,150,300,130,400,240,220,310,220,300, 270, 210
+					</n:div>
+				</n:li>
+				<n:li class="sparks-info">
+					<n:h5> Site Orders <n:span class="txt-color-greenDark"><n:i class="fa fa-shopping-cart"></n:i>2447</n:span></n:h5>
+					<n:div class="sparkline txt-color-greenDark hidden-mobile hidden-md hidden-sm">
+						110,150,300,130,400,240,220,310,220,300, 270, 210
+					</n:div>
+				</n:li>
+			</n:ul>
+		</n:div>
+	</n:div>
+</zk>

@@ -1,0 +1,502 @@
+/*
+ * It is advised not to edit the smartadmin_production.css
+ * as this will override any changes you make in the 
+ * later versions of this theme. 
+ * 
+ * We advise that you use use this CSS to override 
+ * SmartAdmin styles. 
+ * 
+ * Rename the stylesheet to whatever your liking so it will stay
+ * unique to you with each update of SmartAdmin.
+ */
+
+/*
+ * INDEX
+ * 
+ * - HTML
+ * - BODY
+ * - CUSTOM STYLES
+ */
+ 
+ @import url(http://fonts.googleapis.com/css?family=Montserrat);
+ 
+.z-label {
+	font-family: "Open Sans", Arial, Helvetica, Sans-Serif;
+	font-size: 13px;
+	line-height: 1.42857143;
+}
+
+.vt-form .z-row-content, .vt-form .z-row-inner, .vt-form .z-rows,
+	.vt-form .z-row, .vt-form .z-grid-odd, .vt-form .z-grid-body, .vt-form .z-grid-header,
+	.vt-form .z-cell {
+	background: transparent !important;
+	border: none !important;
+}
+
+#extr-page .container {
+	border: none
+}
+
+#extr-page #header {
+	border-bottom: 1px solid #eee !important;
+	background: #2C3742 !important;
+	color: #bfbfbf !important;
+}
+
+html, body {
+	height: auto !important;
+	background-image: none !important;
+}
+
+.smart-form .input input {
+	display: inline;
+}
+
+.smart-form .input .focus input {
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.smart-form .input input.focus {
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.smart-form .input .blur input {
+	font-size: 12px;
+	font-weight: lighter;
+}
+
+.smart-form .input input.blur {
+	font-size: 12px;
+	font-weight: lighter;
+}
+
+.smart-form .input .z-combobox-button, .smart-form .input .z-datebox-button
+	{
+	height: 30px;
+}
+
+.smart-form .input .z-chosenbox-item {
+	padding-left: 8px;
+	padding-right: 15px;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+.smart-form .input .z-combobox-button .z-icon-caret-down {
+	border-collapse: separate;
+	box-sizing: border-box;
+	color: rgb(85, 85, 85);
+	cursor: pointer;
+	display: block;
+	font-family: FontAwesome;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	width: 30px;
+	-webkit-font-smoothing: antialiased;
+}
+
+.smart-form .z-tab-text {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.smart-form .input .z-datebox-button .z-icon-calendar {
+	border-collapse: separate;
+	box-sizing: border-box;
+	color: rgb(85, 85, 85);
+	cursor: pointer;
+	display: block;
+	font-family: FontAwesome;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	width: 30px;
+	-webkit-font-smoothing: antialiased;
+}
+
+.smart-form .input .z-timebox-button {
+	background-color: rgb(255, 255, 255);
+	background-image: none;
+	background-origin: padding-box;
+	background-size: auto;
+	border-bottom-color: rgb(227, 227, 227);
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-collapse: separate;
+	border-image-outset: 0px;
+	border-image-repeat: stretch;
+	border-image-slice: 100%;
+	border-image-source: none;
+	border-image-width: 1;
+	border-left-color: rgb(227, 227, 227);
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-color: rgb(227, 227, 227);
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-color: rgb(227, 227, 227);
+	border-top-style: solid;
+	border-top-width: 1px;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 16px;
+	height: 32px;
+	line-height: normal;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	position: relative;
+	text-align: -webkit-left;
+	vertical-align: middle;
+	white-space: nowrap;
+	width: 32px;
+}
+
+.smart-form .input .z-timebox-button .z-timebox-up {
+	background-attachment: scroll;
+	background-clip: border-box;
+	background-color: rgb(255, 255, 255);
+	background-image: none;
+	background-origin: padding-box;
+	background-size: auto;
+	border-collapse: separate;
+	box-sizing: border-box;
+	color: rgb(85, 85, 85);
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	height: 15px;
+	line-height: 15px;
+	text-align: center;
+	white-space: nowrap;
+	width: 30px;
+}
+
+.smart-form .input .z-timebox-button .z-timebox-down {
+	background-attachment: scroll;
+	background-clip: border-box;
+	background-color: rgb(255, 255, 255);
+	background-image: none;
+	background-origin: padding-box;
+	background-size: auto;
+	border-collapse: separate;
+	box-sizing: border-box;
+	color: rgb(85, 85, 85);
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	height: 15px;
+	line-height: 15px;
+	text-align: center;
+	white-space: nowrap;
+	width: 30px;
+}
+
+.smart-form .input .z-textbox-readonly {
+	background-color: #eee !important;
+}
+
+.page-footer {
+	position: fixed;
+	bottom: 0px;
+}
+
+.comboitem-searchmore {
+	height: 27px !important;
+	border-bottom: 1px solid #ccc !important;
+	border-top: 1px solid #ccc !important;
+}
+
+.comboitem-more {
+	height: 27px !important;
+	border-bottom: 1px solid #ccc !important;
+	border-top: 1px solid #ccc !important;
+	font-weight: bold;
+	color: blue;
+}
+
+.comboitem-searchmore .z-comboitem-image {
+	background: url('../img/plus.png') no-repeat !important;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	width: 18px !important;
+	height: 17px !important;
+	display: block !important;
+	float: left !important;
+	/* padding-top: 4px; */
+	margin: 0px;
+}
+
+.comboitem-searchmore  .z-comboitem-text {
+	font-size: 14px !important;;
+	font-style: italic !important;;
+	font-weight: bold !important;;
+	background-size: cover !important;
+}
+
+.z-combobox-search {
+	margin-left: 5px;
+}
+
+.z-combobox-search .z-combobox-open {
+	width: 100px ! important;
+}
+
+.z-combobox-search .z-combobox-input {
+	height: 25px !important;
+	font-size: 14px !important;
+}
+
+.z-combobox-search .z-combobox-button {
+	height: 25px !important;
+}
+
+.z-textbox-search {
+	margin-left: 5px;
+	font-size: 14px;
+	width: 85%;
+	font-style: normal;
+}
+
+.z-apply-loading {
+	overflow: hidden;
+	z-index: 89500;
+	visibility: hidden;
+}
+
+.z-btn-history {
+	height: 30px;
+	width: 80%;
+	margin-bottom: 3px;
+	padding: 2px 6px ! important;
+	border-radius: 10px;
+	background-color: #327aef;
+	font-weight: bold;
+	color: white;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.z-div-right-detail {
+	left: 5px;
+	position: absolute;
+	top: 8px;
+	z-index: 1
+}
+
+.z-panel-layout-history {
+	width: 300px;
+	border-style: hidden;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.z-opacity-history {
+	opacity: 0.7;
+}
+
+.z-panel-layout-history .z-panel-header {
+	font-weight: bold;
+	font-size: 14px;
+	padding-left: 5px;
+	background: #C5E0FB;
+}
+
+.z-panel-layout-history .panel-body {
+	padding: 3px;
+}
+
+.z-panel-layout-history>div {
+	padding: 0px 0px 0px 0px;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.z-panel-layout-history .panel-head .panel-header {
+	font-weight: bold;
+}
+
+.z-panel-layout-history .panel-heading {
+	padding: 5px 15px;
+	background-color: #1BA339;
+	font-weight: bold;
+	color: white;
+}
+
+.z-panel-layout-history .panel-heading>div>div {
+	float: right;
+}
+
+.z-north-layout-history {
+	width: 300px ! important;
+}
+
+.z-div-control-history {
+	border-width: 4px;
+	width: 100%;
+	text-align: center;
+	padding-right: 8px;
+}
+
+.z-borderlayout-detail-history {
+	height: 202px;
+	width: 100%;
+}
+
+.z-west-detail-history {
+	width: 278px;
+}
+
+.z-west-detail-history .z-west-header {
+	height: 30px ! important;
+}
+
+.z-hlayout-west-history {
+	margin-top: 6px;
+	margin-left: 5px;
+	overflow: visible ! important;
+}
+
+.z-hlayout-west-history .z-hlayout-inner {
+	border-style: none ! important;
+}
+
+.z-hlayout-center-history {
+	margin-top: 16px;
+	margin-left: 40px;
+	overflow: visible ! important;
+}
+
+.z-hlayout-center-history .z-hlayout-inner {
+	border-style: none ! important;
+	width: 100px;
+	right: 20px !important;
+	font-size: 20px;
+}
+
+.z-btn-device-driver {
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.z-div-title-divide {
+	height: 15px;
+	padding-left: 15px;
+	margin-bottom: 4px;
+	color: #327aef;
+}
+
+.z-hl-report-item {
+	padding-left: 20px;
+	padding-right: 10px;
+}
+
+.z-hl-report-item .z-hlayout-inner {
+	width: 46%;
+}
+
+.z-vl-report-item .z-vlayout-inner {
+	padding-bottom: 11px ! important;;
+}
+
+.z-cb-pagesize {
+	width: 50px;
+}
+
+.page-footer {
+	position: absolute;
+}
+
+.z-combobox-open {
+	min-height: 50px;
+}
+
+#content {
+	padding: 0px;
+}
+
+.content {
+	padding: 0px;
+}
+
+.company-info {
+	background: black;
+	padding-bottom: 10px !important;
+	padding-left: 10px !important;
+	width: 100%;
+}
+
+.v-contact {
+	float: right;
+	margin-right: 50px;
+}
+
+.vbutton {
+	margin-left: 5px;
+	margin-right: 5px;
+	min-width: 100px;
+	width: 99%;
+	border-radius: 0px;
+}
+
+.grid-th-bonus {
+	text-align: center !important;;
+}
+
+.z-vl-vchosen-conten .z-vlayout-inner {
+	padding-top: 4px !important;;
+	padding-bottom: 1px !important;
+}
+
+.z-vchosen-refresh {
+	margin-left: 2px;
+	cursor: pointer;
+	margin-right: 6px;
+	margin-top: 4px;
+	font-size: 18px !important;
+}
+
+.z-tree-list-company {
+	border: none;
+}
+
+.z-treecell-content {
+	padding: 4px 2px;
+	line-height: 14px;
+	display: flex;
+	font-weight: 400;
+}
+
+.z-popup-company .z-popup-content  {
+	padding: 5px 5px 5px 5px !important ;
+}
+.z-address-editor{
+	padding: 5px;
+}
+.z-address-editor-textbox{
+	margin-left: 2px;
+	margin-right: 2px;
+}

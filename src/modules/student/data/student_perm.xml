@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data.xml>
+<vopen>
+	<!-- Group -->
+	<record model="Sys.Group" uuid="quanlysinhvien">
+		<field name="name">Quản lý Sinh Viên</field>
+	</record>
+	<record model="Sys.Group" uuid="quanlybomon">
+		<field name="name">Quản lý Bộ môn</field>
+	</record>
+	<record model="Sys.Group" uuid="quanlylop">
+		<field name="name">Quản lý Lớp</field>
+	</record>
+	<!-- Permission quanlysinhvien -->
+	<record model="Sys.Permission" uuid="quanlysinhvien_student">
+		<field name="model">Student.Student</field>
+		<field name="group">quanlysinhvien</field>
+		<field name="creatable">true</field>
+		<field name="updatable">true</field>
+		<field name="readable">true</field>
+		<field name="deletable">true</field>
+	</record>
+	<record model="Sys.Permission" uuid="quanlysinhvien_class">
+		<field name="model">Student.StudentClass</field>
+		<field name="group">quanlysinhvien</field>
+		<field name="creatable">false</field>
+		<field name="updatable">false</field>
+		<field name="readable">true</field>
+		<field name="deletable">false</field>
+	</record>
+	<record model="Sys.Permission" uuid="quanlysinhvien_subject">
+		<field name="model">Student.Subject</field>
+		<field name="group">quanlysinhvien</field>
+		<field name="creatable">false</field>
+		<field name="updatable">false</field>
+		<field name="readable">true</field>
+		<field name="deletable">false</field>
+	</record>
+	
+	<!-- Permission quanlybomon -->
+	<record model="Sys.Permission" uuid="quanlybomon_student">
+		<field name="model">Student.Student</field>
+		<field name="group">quanlybomon</field>
+		<field name="creatable">false</field>
+		<field name="updatable">false</field>
+		<field name="readable">true</field>
+		<field name="deletable">false</field>
+	</record>
+	<record model="Sys.Permission" uuid="quanlybomon_class">
+		<field name="model">Student.StudentClass</field>
+		<field name="group">quanlybomon</field>
+		<field name="creatable">false</field>
+		<field name="updatable">false</field>
+		<field name="readable">true</field>
+		<field name="deletable">false</field>
+	</record>
+	<record model="Sys.Permission" uuid="quanlybomon_subject">
+		<field name="model">Student.Subject</field>
+		<field name="group">quanlybomon</field>
+		<field name="creatable">true</field>
+		<field name="updatable">true</field>
+		<field name="readable">true</field>
+		<field name="deletable">true</field>
+	</record>
+	
+	<!-- Permission quanlylop -->
+	<record model="Sys.Permission" uuid="quanlylop_student">
+		<field name="model">Student.Student</field>
+		<field name="group">quanlylop</field>
+		<field name="creatable">false</field>
+		<field name="updatable">false</field>
+		<field name="readable">true</field>
+		<field name="deletable">false</field>
+	</record>
+	<record model="Sys.Permission" uuid="quanlylop_class">
+		<field name="model">Student.StudentClass</field>
+		<field name="group">quanlylop</field>
+		<field name="creatable">true</field>
+		<field name="updatable">true</field>
+		<field name="readable">true</field>
+		<field name="deletable">true</field>
+	</record>
+	<record model="Sys.Permission" uuid="quanlylop_subject">
+		<field name="model">Student.Subject</field>
+		<field name="group">quanlylop</field>
+		<field name="creatable">false</field>
+		<field name="updatable">false</field>
+		<field name="readable">true</field>
+		<field name="deletable">false</field>
+	</record>
+</vopen>

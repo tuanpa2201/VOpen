@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data.xml>
+<vopen>
+	<!-- Menu & Window -->
+	<record model="Sys.Menu" uuid="crm_root">
+		<field name="name">CRM</field>
+		<field name="sequence">20</field>
+	</record>
+	
+	<record model="Sys.Action" uuid="crm_customer_action">
+		<field name="name">Customer manager</field>
+		<field name="window">window_customer</field>
+	</record>
+	<record model="Sys.Menu" uuid="crm_customer_menu">
+		<field name="name">Customer manager</field>
+		<field name="parentId">crm_root</field>
+		<field name="sequence">10</field>
+		<field name="action">crm_customer_action</field>
+	</record>
+</vopen>

@@ -1,0 +1,13 @@
+<?page title="MQTT Client" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="MQTT Client" border="normal" width="100%" vflex="min" apply="base.util.MQTTClient">
+	<vlayout>
+		<hlayout>MQTT Client ID: <textbox hflex="1" id="txtClient"></textbox></hlayout>
+		<hlayout>Topic: <textbox hflex="1" id="txtTopic"></textbox></hlayout>
+		<hlayout>Message: <textbox hflex="1" id="txtMessage" multiline="true"></textbox></hlayout>
+		<hlayout>QoS: <intbox hflex="1" id="txtQos"></intbox> </hlayout>
+		<checkbox id="cbRetain" label="Is Retain?"></checkbox>
+		<button id="btPublish">Publish</button>
+	</vlayout>
+</window>
+</zk>

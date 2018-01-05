@@ -1,0 +1,7 @@
+<?page title="Online" contentType="text/html;charset=UTF-8"?>
+<?script type="text/javascript" src="vmap/RotateIcon.js" ?>
+<?script type="text/javascript" src="vmap/vmap_expand.js" ?>
+<?script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAocRnSkbbpbc2yed6l-JnO28vmLo5Z0n0&libraries=places,drawing&callback=vietek.didLoadGoogleMapLibrary" async defer ?>
+<?script type="text/javascript" src="vmap/markerwithlabel.js" ?>
+	<?link rel="stylesheet" type="text/css" media="screen" href="css/tracking.css"?>
+<div use="modules.tracking.mqtt.view.OnlineViewAMQP"></div>

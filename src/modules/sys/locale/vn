@@ -1,0 +1,47 @@
+User Management=Danh Mục Người Dùng
+Group Management=Danh Mục Nhóm Người Dùng
+Full Name=Tên Đầy Đủ
+Common Info=Thông Tin Chung
+Tracking Info=Thông Tin Theo Dõi
+Vehicle Groups
+Vehicle
+Companys=Công Ty
+Groups=Nhóm Người Dùng
+Rules=Quyền Hạn
+Users=Người Dùng
+Menus=Chức Năng
+Permissions=Phân Quyền
+User group=Nhóm Người Dùng
+
+Menu management=Danh Mục Chức Năng
+Menu Management=Danh Mục Chức Năng
+Action=Hành Động
+Parent Menu=Chức Năng Cha
+
+Action Management=Danh Mục Hành Động
+Window
+Zul File
+View Class
+Style=Kiểu Hiển Thị
+
+Rule Management=Cấu Hình Phân Quyền
+Model=Modul Chức Năng
+HQL=Câu Truy Vấn Hibernate
+Priority=Độ Ưu Tiên
+Groups - Users=Nhóm - Người Dùng
+Apply=Gán
+Apply for Create=Cho Phép Tạo Mới
+Apply for Read=Cho Phép Đọc
+Apply for Update=Cho Phép Sửa
+Apply for Delete=Cho Phép Xóa
+
+Title=Tiêu Đề
+StartDate=Ngày Bắt Đầu
+EndDate=Ngày Kết Thúc
+Imposition
+Author=Tác Giả
+Content=Nội Dung
+
+Next=Tiếp
+Previous=Trước
+Close=Đóng

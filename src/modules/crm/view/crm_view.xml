@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data.xml>
+<vopen>
+	<!-- Customer -->
+	<view model="Crm.Partner" type="list" id="view_customer_list" priority="100">
+		<header></header>
+		<list>
+			<field name="name"/>
+			<field name="isOrg"/>
+			<field name="email"/>
+			<field name="phone"/>
+		</list>
+		<footer></footer>
+	</view>
+	<view model="Crm.Partner" type="form" id="view_customer_form" columns="3" priority="100">
+		<group title="Partner Info" colspan="2">
+			<field name="name" style="focus"/>
+			<field name="isOrg"/>
+			<field name="organization" style="blur"/>
+		</group>
+		<group colspan="1">
+			<field name="avatar"/>
+		</group>
+		<tabbox colspan="3">
+			<tab title="Common Info" columns="2">
+				<group colspan="1">
+					<field name="address"/>
+				</group>
+				<group colspan="1">
+					<field name="email"/>
+					<field name="phone"/>
+				</group>
+			</tab>
+			<tab title="Buy and sell" columns="2">
+				<group colspan="1">
+					<field name="isCustomer"/>
+					<field name="isVendor"/>
+				</group>
+				<group colspan="1">
+					<field name="company"/>
+				</group>
+			</tab>
+		</tabbox>
+	</view>
+	<window model="Crm.Partner"  id="window_customer" title="Partner Manager">
+		<filter></filter>
+		<sort_by>name</sort_by>
+		<views>list,form</views>
+	</window>
+</vopen>

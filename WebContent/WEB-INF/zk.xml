@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	Created by ZK Studio
+-->
+
+<zk>
+	<device-config>
+		<device-type>ajax</device-type>
+		<!-- <embed><![CDATA[
+				<script type="text/javascript">
+		zk.afterLoad("zk", function () {
+			var oldProgressbox = zUtl.progressbox;
+			zUtl.progressbox = function () {
+				oldProgressbox.apply(this, arguments);
+				var $mask = jq('.z-loading');
+				if ($mask) {
+					var $img = jq('.z-loading-indicator');
+
+					// update mask and image's style
+					$mask.width($(window).width());
+					$mask.height($(window).height());
+					$mask.css('opacity', '0.8');
+
+					$img.width("150px");
+					$img.css('margin-left', ($mask.width() - $img.width()) / 2 + 'px');
+					$img.css('margin-top', ($mask.height() - $img.height()) / 2 + 'px');
+					$img.css("background-color", "transparent")
+					$img.css("border", "none")
+					
+					$(window).resize(function() {
+						$mask.width($(window).width());
+						$mask.height($(window).height());
+						$img.css('margin-left', ($mask.width() - $img.width()) / 2 + 'px');
+						$img.css('margin-top', ($mask.height() - $img.height()) / 2 + 'px');
+					});
+				}
+			}
+		});
+	</script>
+		]]></embed> -->
+		<timeout-uri></timeout-uri><!-- An empty URL can cause the browser to reload the same URL -->
+	</device-config>
+	<!-- Use the same styles regardless of device -->
+	<library-property>
+	    <name>org.zkoss.zkmax.tablet.ui.disabled</name>
+	    <value>true</value>
+	</library-property>
+	<session-config>
+	    <session-timeout>3600</session-timeout>	
+	    <!-- <max-desktops-per-session>15</max-desktops-per-session> -->
+	    <!-- <max-requests-per-session>5</max-requests-per-session> -->
+	    <!-- <max-pushes-per-session>3</max-pushes-per-session> -->
+	</session-config>
+</zk>

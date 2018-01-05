@@ -1,0 +1,35 @@
+@CHARSET "ISO-8859-1";
+.v-acct-management-btn {
+	background: #fb3c4a;
+	color: #fff!important;
+	font-family: Sans-serif;
+	border: 1px solid #fb3c4a;
+}
+.v-acct-management-btn:HOVER {
+	background: #c92020;
+	color: #fff!important;
+	font-family: Sans-serif;
+}
+.v-acct-management-btn:FOCUS {
+	background: #fb3c4a;
+	color: #fff!important;
+	font-family: Sans-serif;
+}
+
+.v-acct-management-register .z-window-header{
+	background: #fb3c4a;
+}
+.v-acct-management-register .z-window-header z-window-header-move .z-window-icon{
+	margin-right: 15px;
+}
+.v-acct-management-register .z-window-header z-window-header-move .z-window-icon z-window-close {
+	font-size: 30px;
+	line-height: 22px;
+	margin-right: 15px;
+}
+.vlayout_sub .z-vlayout-inner{
+	padding-bottom: 0px !important;
+}
+.vlayout_reception z-vlayout .z-vlayout-inner{
+	padding-bottom: 0px !important;
+}

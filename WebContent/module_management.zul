@@ -1,0 +1,20 @@
+<?page title="Module Management" contentType="text/html;charset=UTF-8"?>
+<?link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css"?>
+<?link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css"?>
+<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+<?link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css"?>
+<?link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css"?>
+<?link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css"?>
+<?link rel="stylesheet" type="text/css" media="screen" href="css/module_style.css"?>
+<?init class="base.util.ModuleAuthenticationInit"?>
+<vlayout vflex="1" hflex="1" style="padding: 10px; overflow: auto"
+		apply="base.view.ModuleManager">
+	<vbox hflex="1"
+			style="border-bottom: 2px dashed #ccc; padding: 10px;" pack="center"
+			align="center">
+			<label style="font-size: 20px; font-weight: bold;">
+				MODULE MANAGEMENT
+			</label>
+		</vbox>
+	<div id="container" hflex="1" vflex="min" zclass="none" sclass="container"></div>
+</vlayout>

@@ -1,0 +1,490 @@
+<?page title="VOPEN"?>
+		<?meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"?>
+		<!-- Basic Styles -->
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css"?>
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css"?>
+		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css"?>
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css"?>
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css"?>
+
+		<!-- SmartAdmin RTL Support  -->
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"?>
+
+		<!-- We recommend you use "your_style.css" to override SmartAdmin
+		     specific styles this will also ensure you retrain your customization with each SmartAdmin update. -->
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/vopen.css"?>
+		<?link rel="stylesheet" type="text/css" media="screen" href="css/notification.css"?>
+			<?link rel="stylesheet" type="text/css" media="screen" href="css/tracking.css"?>
+			<?link rel="stylesheet" type="text/css" media="screen" href="css/parking.css"?>
+
+		<!-- FAVICONS -->
+		<?link rel="shortcut icon" href="img/favicon/iconvietek.ico" type="image/x-icon"?>
+		<?link rel="icon" href="img/favicon/iconvietek.ico" type="image/x-icon"?>
+
+		<!-- GOOGLE FONT -->
+		<?link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700&subset=latin,vietnamese"?>
+
+		<!-- Specifying a Webpage Icon for Web Clip 
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<?link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png"?>
+		<?link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png"?>
+		<?link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png"?>
+		<?link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png"?>
+		
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<?meta name="apple-mobile-web-app-capable" content="yes"?>
+		<?meta name="apple-mobile-web-app-status-bar-style" content="black"?>
+		
+		<!-- Startup image for web apps -->
+		<?link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)"?>
+		<?link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)"?>
+		<?link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)"?>
+
+		<?script type="text/javascript" src="vmap/RotateIcon.js" ?>
+		<?script type="text/javascript" src="vmap/vmap_expand.js" ?>
+		<?script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAocRnSkbbpbc2yed6l-JnO28vmLo5Z0n0&libraries=places,drawing&callback=vietek.didLoadGoogleMapLibrary" async defer ?>
+		<?script type="text/javascript" src="vmap/markerwithlabel.js" ?>
+		<?script type="text/javascript" src="js/pagesetup.js" ?>
+	
+		<?init class="base.util.AuthenticationInit"?>
+<zk xmlns:w="client" xmlns:n="native">
+	<div zclass="" id="divBody" width="100%" height="100%" apply="base.view.Index">
+		<n:header id="header">
+			<!-- pulled right: nav area -->
+			<n:div class="pull-left" style="position: relative">
+				<!-- collapse menu button -->
+				<n:div id="hide-menu" class="btn-header pull-left" style="padding-right: 5px; padding-left: 5px;">
+					<n:span> <n:a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><n:i class="fa fa-reorder"></n:i></n:a></n:span>
+				</n:div>
+				
+				<n:h1 style="color: white !important;" class="pull-left">
+					<label zclass="none">Menu</label>
+				</n:h1>
+
+				<!-- end collapse menu -->
+				<n:div id="logo-group">
+				<n:span id="activity" class="activity-dropdown" style="position: absolute !important; right: 5px !important;"> <n:i class="fa fa-user"></n:i> <n:b class="badge"> <label id="lblListNotification"></label> </n:b> </n:span>
+				<!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
+				<n:div class="ajax-dropdown">
+<!-- 						<div id="notificationBtn"></div> -->
+					<!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
+					<n:div class="btn-group btn-group-justified" data-toggle="buttons">
+						<!--<label id="global" class="btn btn-default">
+							<input type="radio" name="activity" id="globalInput"/>
+							 </label>
+						<label id = "personal" class="btn btn-default">
+							<input type="radio" name="activity" id="personalInput"/>
+							</label>-->
+						<label id = "total" class="btn btn-default">
+							<input type="radio" name="activity" id="totalInput"/>
+							</label>
+					</n:div>
+	
+					<!-- notification content -->
+					<n:div class="ajax-notifications custom-scroll">
+							<div id="divNotifications"></div>
+<!-- 						<n:div class="alert alert-transparent"> -->
+<!-- 							<n:h4>Click a button to show messages here</n:h4> -->
+<!-- 							This blank page message helps protect your privacy, or you can show the first message here automatically. -->
+<!-- 						</n:div> -->
+	
+	
+					</n:div>
+				</n:div>
+				<!-- end notification content -->
+				</n:div>
+			</n:div>
+			
+			<n:div class="pull-left" style="padding-left: 5px;">
+				<!-- show all menu button -->
+				<div zclass="none" id="divShowAllModule" class="btn-header pull-left" style="padding-right: 5px;">
+				</div>
+				<n:a data-action="toggleShortcut">
+					<n:h1 style="color: white !important;" class="pull-left hidden-xs">
+						<label zclass="none" id="lbModuleName">Tracking</label>
+					</n:h1>
+				</n:a>
+				<!-- end show all menu button -->
+			</n:div>
+			
+			<n:div class="pull-right">
+			<!-- input: search field -->
+				<n:form action="index.zul" class="header-search pull-right">
+					<n:input id="search-fld"  type="text" name="param" placeholder="Find reports and more" data-autocomplete='[
+					"ActionScript",
+					"AppleScript",
+					"Asp",
+					"BASIC",
+					"C",
+					"C++",
+					"Clojure",
+					"COBOL",
+					"ColdFusion",
+					"Erlang",
+					"Fortran",
+					"Groovy",
+					"Haskell",
+					"Java",
+					"JavaScript",
+					"Lisp",
+					"Perl",
+					"PHP",
+					"Python",
+					"Ruby",
+					"Scala",
+					"Scheme"]'/>
+					<n:button type="submit">
+						<n:i class="fa fa-search"></n:i>
+					</n:button>
+					<n:a href="javascript:void(0);" id="cancel-search-js" title="Cancel Search"><n:i class="fa fa-times"></n:i></n:a>
+				</n:form>
+				<!-- end input: search field -->
+				<!-- search mobile button (this is hidden till mobile view port) -->
+				<n:div id="search-mobile" class="btn-header transparent pull-right">
+					<n:span> <n:a href="javascript:void(0)" title="Search"><n:i class="fa fa-search"></n:i></n:a> </n:span>
+				</n:div>
+				<!-- end search mobile button -->
+
+				<!-- fullscreen button -->
+				<n:div id="fullscreen" class="btn-header transparent pull-right hide-sx">
+					<n:span> <n:a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><n:i class="fa fa-arrows-alt"></n:i></n:a> </n:span>
+				</n:div>
+				<!-- end fullscreen button -->
+				
+				<!-- multiple lang dropdown : find all flags in the flags page -->
+				<div id="divLanguage" class="header-dropdown-list hidden-xs">
+				</div>
+				<!-- end multiple lang -->
+
+			</n:div>
+		</n:header>
+		<!-- END HEADER -->
+		<!-- Left panel : Navigation area -->
+		<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+		<n:aside id="left-panel">
+			<!-- projects dropdown -->
+			<n:div class="company-info">
+				<div id="divCompany">
+				</div>
+			</n:div>
+			<!-- end companies dropdown -->
+			<!-- User info -->
+			<n:div class="login-info">
+				<n:span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
+					<n:ul class="header-dropdown-list" style="width: 100% !important;">
+					<n:li>
+					<n:a href="javascript:void(0);" data-toggle="dropdown">
+						<image sclass="online" id="user_avatar"></image>
+						<label id="username" zclass="none">Tuanpa</label>
+						<n:i class="fa fa-angle-down"></n:i>
+					</n:a> 
+					<n:ul class="dropdown-menu pull-right">
+						<n:li>
+								<n:a onClick="showProfile();">Account Info</n:a>
+						</n:li>
+						<n:li>
+						<n:a href="login.zul" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser">Log Out</n:a>
+						</n:li>
+					</n:ul>
+					</n:li>
+					</n:ul>
+					
+				</n:span>
+			</n:div>
+			<!-- end user info -->
+
+			<!-- NAVIGATION : This navigation is also responsive-->
+			<div zclass="" id="div_nav">
+			</div>
+
+			<n:span class="minifyme" data-action="minifyMenu"> 
+				<n:i class="fa fa-arrow-circle-left hit"></n:i> 
+			</n:span>
+
+		</n:aside>
+		<!-- END NAVIGATION -->
+		
+				<!-- MAIN PANEL -->
+		<n:div id="main" role="main">
+
+			<!-- RIBBON
+			<n:div id="ribbon">
+
+				<n:span class="ribbon-button-alignment"> 
+					<n:span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="" data-html="true">
+						<n:i class="fa fa-refresh"></n:i>
+					</n:span> 
+				</n:span>
+
+				breadcrumb
+				<n:ol class="breadcrumb">
+					<n:li>Dashboard</n:li>
+				</n:ol>
+				end breadcrumb
+
+			</n:div>
+			END RIBBON -->
+
+			<!-- MAIN CONTENT -->
+			<n:div id="content">
+				<div zclass="none" id="divMain">
+				</div>
+			</n:div>
+			<!-- END MAIN CONTENT -->
+
+		</n:div>
+		<!-- END MAIN PANEL -->
+
+		<!-- PAGE FOOTER -->
+		<n:div class="page-footer">
+			<n:div class="row">
+				<n:div class="container-fluid">
+					<n:span class="txt-color-white">Vietek<n:span class="hidden-xs"> </n:span> © 2016</n:span>
+					<n:a style="float: right;">
+				<n:i class="fa fa-lg fa-fw fa-headphones"></n:i> 
+				<n:span class="txt-color-white">Hotline: 0924.124.555</n:span>
+				</n:a>
+					
+				</n:div>
+				<n:div class="col-xs-6 col-sm-6 text-right hidden-xs">
+					<n:div class="txt-color-white inline-block">
+						<!-- <n:i class="txt-color-blueLight hidden-mobile">Last account activity <n:i class="fa fa-clock-o"></n:i> <n:strong>52 mins ago;</n:strong> </n:i>
+						<n:div class="btn-group dropup">
+							<n:button class="btn btn-xs dropdown-toggle bg-color-blue txt-color-white" data-toggle="dropdown">
+								<n:i class="fa fa-link"></n:i> <n:span class="caret"></n:span>
+							</n:button>
+							<n:ul class="dropdown-menu pull-right text-left">
+								<n:li>
+									<n:div class="padding-5">
+										<n:p class="txt-color-darken font-sm no-margin">Download Progress</n:p>
+										<n:div class="progress progress-micro no-margin">
+											<n:div class="progress-bar progress-bar-success" style="width: 50%;"></n:div>
+										</n:div>
+									</n:div>
+								</n:li>
+								<n:li class="divider"></n:li>
+								<n:li>
+									<n:div class="padding-5">
+										<n:p class="txt-color-darken font-sm no-margin">Server Load</n:p>
+										<n:div class="progress progress-micro no-margin">
+											<n:div class="progress-bar progress-bar-success" style="width: 20%;"></n:div>
+										</n:div>
+									</n:div>
+								</n:li>
+								<n:li class="divider"></n:li>
+								<n:li>
+									<n:div class="padding-5">
+										<n:p class="txt-color-darken font-sm no-margin">Memory Load <n:span class="text-danger">*critical*</n:span></n:p>
+										<n:div class="progress progress-micro no-margin">
+											<n:div class="progress-bar progress-bar-danger" style="width: 70%;"></n:div>
+										</n:div>
+									</n:div>
+								</n:li>
+								<n:li class="divider"></n:li>
+								<n:li>
+									<n:div class="padding-5">
+										<n:button class="btn btn-block btn-default">refresh</n:button>
+									</n:div>
+								</n:li>
+							</n:ul>
+						</n:div> -->
+					</n:div>
+				</n:div>
+			</n:div>
+		</n:div>
+		<!-- END PAGE FOOTER -->
+		
+		<!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+		Note: These tiles are completely responsive,
+		you can add as many as you like
+		-->
+		<n:div id="shortcut" style="min-height: 100%;">
+			<n:div>
+				<n:h1>All Modules</n:h1>
+				<n:div id="toggle_module" class="btn-header transparent pull-right" style="position: fixed !important; top: 10px; right: 10px;">
+					<n:span> <n:a href="javascript:void(0);" data-action="toggleShortcut" title="Full Screen"><n:i class="fa fa-times"></n:i></n:a> </n:span>
+				</n:div>
+			</n:div>
+			<div id="shortcut_placeholder"  style="min-height: 100%;">
+			</div>
+			<n:div style="position: fixed; bottom: 0px; left: 0px;">
+				<n:h2>VOPEN - Internet of things</n:h2>
+				<n:h5>Copyright: Vietek</n:h5>
+			</n:div>
+		</n:div>
+		<!-- END SHORTCUT AREA -->
+		
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+		<n:script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></n:script>
+
+		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			if (!window.jQuery) {
+				document.write('<script src="js/libs/jquery-2.1.1.min.js"></script>');
+			}
+		</script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script>
+			if (!window.jQuery.ui) {
+				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"></script>');
+			}
+		</script>
+
+		<!-- IMPORTANT: APP CONFIG -->
+		<script src="js/app.config.js"></script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
+
+		<!-- BOOTSTRAP JS -->
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- CUSTOM NOTIFICATION -->
+		<script src="js/notification/SmartNotification.min.js"></script>
+
+		<!-- JARVIS WIDGETS -->
+		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+
+		<!-- EASY PIE CHARTS -->
+		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+		<!-- SPARKLINES -->
+		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+		<!-- JQUERY MASKED INPUT -->
+		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+		<!-- JQUERY SELECT2 INPUT -->
+		<script src="js/plugin/select2/select2.min.js"></script>
+
+		<!-- JQUERY UI + Bootstrap Slider -->
+		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+		<!-- browser msie issue fix -->
+		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+		<!-- FastClick: For mobile devices -->
+		<script src="js/plugin/fastclick/fastclick.min.js"></script>
+		
+		<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
+		<!-- Voice command : plugin -->
+		<script src="js/speech/voicecommand.min.js"></script>
+
+		<!-- SmartChat UI : plugin -->
+		<script src="js/smart-chat-ui/smart.chat.ui.min.js"></script>
+		<script src="js/smart-chat-ui/smart.chat.manager.min.js"></script>
+		
+		<!-- PAGE RELATED PLUGIN(S) -->
+		
+		<!-- Flot Chart Plugin: Flot Engine, Flot Resizer, Flot Tooltip -->
+		<script src="js/plugin/flot/jquery.flot.cust.min.js"></script>
+		<script src="js/plugin/flot/jquery.flot.resize.min.js"></script>
+		<script src="js/plugin/flot/jquery.flot.time.min.js"></script>
+		<script src="js/plugin/flot/jquery.flot.tooltip.min.js"></script>
+		
+		<!-- Vector Maps Plugin: Vectormap engine, Vectormap language -->
+		<script src="js/plugin/vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+		<script src="js/plugin/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+		
+		<!-- Full Calendar -->
+		<script src="js/plugin/moment/moment.min.js"></script>
+		<script src="js/plugin/fullcalendar/jquery.fullcalendar.min.js"></script>
+		
+		<script type="text/javascript" src="vmap/jqueryrotate.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js" type="text/javascript"></script>
+		
+		<script defer="true">
+			$(document).ready(function() {
+				$("body").addClass("smart-style-1");
+				setupHistorySystem();
+				setupResizeEvent();
+			});
+		</script>
+		<script>
+		var current_fs, next_fs, previous_fs; //fieldsets
+		var left, opacity, scale; //fieldset properties which we will animate
+		var animating; //flag to prevent quick multi-click glitches
+		
+		$(".notification-next").click(function(){
+			if(animating) return false;
+			animating = true;
+			
+			current_fs = $(this).parent();
+			next_fs = $(this).parent().next();
+			
+			//activate next step on progressbar using the index of next_fs
+			$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+			
+			//show the next fieldset
+			next_fs.show(); 
+			//hide the current fieldset with style
+			current_fs.animate({opacity: 0}, {
+				step: function(now, mx) {
+					//as the opacity of current_fs reduces to 0 - stored in "now"
+					//1. scale current_fs down to 80%
+					scale = 1 - (1 - now) * 0.2;
+					//2. bring next_fs from the right(50%)
+					left = (now * 50)+"%";
+					//3. increase opacity of next_fs to 1 as it moves in
+					opacity = 1 - now;
+					current_fs.css({'transform': 'scale('+scale+')'});
+					next_fs.css({'left': left, 'opacity': opacity});
+				}, 
+				duration: 800, 
+				complete: function(){
+					current_fs.hide();
+					animating = false;
+				}, 
+				//this comes from the custom easing plugin
+				easing: 'easeInOutBack'
+			});
+		});
+		
+		$(".notification-previous").click(function(){
+			if(animating) return false;
+			animating = true;
+			
+			current_fs = $(this).parent();
+			previous_fs = $(this).parent().prev();
+			
+			//de-activate current step on progressbar
+			$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+			
+			//show the previous fieldset
+			previous_fs.show(); 
+			//hide the current fieldset with style
+			current_fs.animate({opacity: 0}, {
+				step: function(now, mx) {
+					//as the opacity of current_fs reduces to 0 - stored in "now"
+					//1. scale previous_fs from 80% to 100%
+					scale = 0.8 + (1 - now) * 0.2;
+					//2. take current_fs to the right(50%) - from 0%
+					left = ((1-now) * 50)+"%";
+					//3. increase opacity of previous_fs to 1 as it moves in
+					opacity = 1 - now;
+					current_fs.css({'left': left});
+					previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+				}, 
+				duration: 800, 
+				complete: function(){
+					current_fs.hide();
+					animating = false;
+				}, 
+				//this comes from the custom easing plugin
+				easing: 'easeInOutBack'
+			});
+		});
+		
+		$(".submit").click(function(){
+			return false;
+		})
+		</script>
+	</div>
+</zk>

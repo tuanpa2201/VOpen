@@ -1,0 +1,71 @@
+<?page title="Monitor" contentType="text/html;charset=UTF-8"?>
+<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+<?init class="base.util.ModuleAuthenticationMonitorInit"?>
+<window width="100%" use="base.VMonitor">
+	<tabbox width="100%" sclass="nav_tabs">
+		<tabs id="tabs">
+			<tab label="Overview" />
+			<tab label="Monitor" />
+			<tab label="List Session" />
+		</tabs>
+		<tabpanels>
+			<tabpanel>
+				<div
+					style="float:left; width:100%; height:100%; margin-top:10px">
+					<label id="label1"
+						style="float:left; width:80%;height:25px; font-size:14px; margin-top:10px;margin-left:5%;" />
+					<label id="label2"
+						style="float:left; width:80%; height:25px; font-size:14px; margin-top:10px;margin-left:5%;" />
+					<label id="label3"
+						style="float:left; width:80%; height:25px; font-size:14px; margin-top:10px;margin-left:5%;" />
+					<label id="label4"
+						style="float:left; width:80%; height:25px; font-size:14px; margin-top:10px;margin-left:5%;" />
+					<label id="label5"
+						style="float:left; width:80%; height:25px; font-size:14px; margin-top:10px;margin-left:5%;" />
+					<label id="label6"
+						style="float:left; width:80%; height:25px; font-size:14px; margin-top:10px;margin-left:5%;" />
+					<label id="label7"
+						style="float:left; width:80%; height:25px; font-size:14px; margin-top:10px;margin-left:5%;" />
+					<label id="label8"
+						style="float:left; width:80%; height:25px; font-size:14px; margin-top:10px;margin-left:5%;" />
+				</div>
+			</tabpanel>
+			<tabpanel>
+				<div
+					style="float:left; width:100%; height:70px; margin-top:10px">
+					<label id="lbCpu"
+						style="float:left; width:50%; height:30px; font-size:14px; margin-top:10px; padding-left:5%" />
+					<label id="lbMem"
+						style="float:left; width:50%; height:30px; font-size:14px; margin-top:10px;padding-left:5%" />
+					<label id="lbCpu1"
+						style="float:left; width:50%; height:30px; font-size:14px; margin-top:10px; padding-left:5%" />
+					<label id="lbMem1"
+						style="float:left; width:50%; height:30px; font-size:14px; margin-top:10px;padding-left:5%" />
+				</div>
+				<zhighcharts id="chartCpu" width="50%"
+					style="float:left" />
+				<zhighcharts id="chartMem" width="50%"
+					style="float:left" />
+			</tabpanel>
+			<tabpanel>
+				<div
+					style="float:left; width:100%; height:100%; margin-top:10px">
+					<button id="refreshBtn" width="115px" label="Refresh"
+						style="margin-bottom:10px;margin-top:10px" />
+					<grid id ="grid" mold="paging" vflex="1">
+						<columns id="column">
+							<column hflex="5">Session Key</column>
+							<column hflex="6">User</column>
+							<column hflex="3">Last Time Used</column>
+							<column hflex="4">Time Logined</column>
+							<column hflex="2">Device</column>
+						</columns>
+						<rows id="rows" sclass="narrow"></rows>
+					</grid>
+				</div>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+
+</window>
+

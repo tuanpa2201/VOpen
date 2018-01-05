@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data.xml>
+<vopen>
+	<!-- SysAction -->
+	<view model="Sys.Action" type="list" id="view_sys_action_list"
+		priority="10">
+		<list>
+			<field name="name" />
+			<field name="window" />
+			<field name="zul" />
+			<field name="viewClass" />
+			<field name="style" />
+		</list>
+	</view>
+	<view model="Sys.Action" type="form" id="view_sys_action_form"
+		columns="2" priority="10">
+		<group title="Action Info" colspan="2">
+			<field name="name" />
+			<field name="window" />
+			<field name="zul" />
+			<field name="viewClass" />
+			<field name="style" />
+		</group>
+	</view>
+	<window model="Sys.Action" id="window_sys_action" title="Action Manager">
+		<filter></filter>
+		<views>list,form</views>
+	</window>
+
+	<!-- SysCompany -->
+	<view model="Sys.Company" type="list" id="view_sys_company_list"
+		priority="10">
+		<list>
+			<field name="name" />
+			<field name="parentId" />
+		</list>
+	</view>
+	<view model="Sys.Company" type="form" id="view_sys_company_form"
+		columns="2" priority="10">
+		<group title="Action Info" colspan="2">
+			<field name="name" />
+			<field name="parentId" />
+		</group>
+	</view>
+	<window model="Sys.Company" id="window_sys_company" title="Company Manager">
+		<filter></filter>
+		<views>list,form</views>
+	</window>
+
+	<!-- SysGroup -->
+	<view model="Sys.Group" type="list" id="view_sys_group_list"
+		priority="10">
+		<list>
+			<field name="name" />
+		</list>
+	</view>
+	<view model="Sys.Group" type="form" id="view_sys_group_form"
+		columns="2" priority="10">
+		<group title="Action Info" colspan="2">
+			<field name="name" />
+			<field name="users" />
+			<field name="menus" />
+			<field name="permissions">
+				<view type="list">
+					<list>
+						<field name="model" />
+						<field name="group" />
+						<field name="creatable" />
+						<field name="updatable" />
+						<field name="readable" />
+						<field name="deletable" />
+					</list>
+				</view>
+				<view type="form" columns="2">
+					<group title="Student Info" colspan="2">
+						<field name="model" />
+						<field name="group" />
+						<field name="creatable" />
+						<field name="updatable" />
+						<field name="readable" />
+						<field name="deletable" />
+					</group>
+				</view>
+			</field>
+		</group>
+	</view>
+	<window model="Sys.Group" id="window_sys_group" title="Group Manager">
+		<filter></filter>
+		<views>list,form</views>
+	</window>
+
+	<!-- SysMenu -->
+	<view model="Sys.Menu" type="list" id="view_sys_menu_list"
+		priority="10">
+		<list>
+			<field name="fullname" />
+			<field name="name" />
+			<field name="action" />
+		</list>
+	</view>
+	<view model="Sys.Menu" type="form" id="view_sys_menu_form"
+		columns="2" priority="10">
+		<group title="Action Info" colspan="2">
+			<field name="name" />
+			<field name="fullname" />
+			<field name="action" />
+			<field name="parentId" />
+		</group>
+	</view>
+	<window model="Sys.Menu" id="window_sys_menu" title="Menu Manager">
+		<filter></filter>
+		<views>list,form</views>
+	</window>
+
+	<!-- SysRule -->
+	<view model="Sys.Rule" type="list" id="view_sys_rule_list"
+		priority="10">
+		<list>
+			<field name="name" />
+			<field name="model" />
+			<field name="hql" />
+			<field name="priority" />
+			<field name="apply_create" />
+			<field name="apply_read" />
+			<field name="apply_update" />
+			<field name="apply_delete" />
+		</list>
+	</view>
+	<view model="Sys.Rule" type="form" id="view_sys_rule_form"
+		columns="2" priority="10">
+		<group title="Rule Info" colspan="1">
+			<field name="name" />
+			<field name="model" />
+			<field name="hql" />
+			<field name="priority" />
+		</group>
+		<group title="Apply" colspan="1">
+			<field name="apply_create" />
+			<field name="apply_read" />
+			<field name="apply_update" />
+			<field name="apply_delete" />
+		</group>
+		<group title="Groups - Users" colspan="2">
+			<field name="groups" />
+			<field name="users" />
+		</group>
+	</view>
+	<window model="Sys.Rule" id="window_sys_rule" title="Rule Manager">
+		<filter></filter>
+		<views>list,form</views>
+	</window>
+
+	<!-- SysUser -->
+	<view model="Sys.User" type="list" id="view_sys_user_list"
+		priority="10">
+		<list>
+			<field name="name" />
+			<field name="username" />
+		</list>
+	</view>
+	<view model="Sys.User" type="form" id="view_sys_user_form"
+		columns="2" priority="10">
+		<group title="Rule Info" colspan="2">
+			<field name="avatar" />
+			<field name="name" />
+			<field name="username" />
+			<field name="password" />
+			<field name="reset_password" />
+		</group>
+		<tabbox colspan="2">
+			<tab title="Common Info">
+				<group colspan="1">
+					<field name="companies" />
+					<field name="groups" />
+					<field name="rules" />
+				</group>
+			</tab>
+		</tabbox>
+	</view>
+	<window model="Sys.User" id="window_sys_user" title="User Manager">
+		<filter></filter>
+		<views>list,form</views>
+	</window>
+
+	<!-- SysRule -->
+	<view model="Sys.File" type="list" id="view_sys_file_list"
+		priority="10">
+		<list>
+			<field name="name" />
+			<field name="type" />
+			<field name="fileString" />
+		</list>
+	</view>
+	<view model="Sys.File" type="form" id="view_sys_file_form"
+		columns="2" priority="10">
+		<group title="Rule Info" colspan="2">
+			<field name="name" />
+			<field name="type" />
+			<field name="fileString" />
+		</group>
+	</view>
+	<window model="Sys.File" id="window_sys_file" title="File Manager">
+		<filter></filter>
+		<views>list,form</views>
+	</window>
+
+	<!-- SysAddress -->
+	<view model="Sys.Address" type="list" id="view_sys_address_list"
+		priority="10">
+		<list>
+			<field name="name" />
+			<field name="latitude" />
+			<field name="longitude" />
+		</list>
+	</view>
+	<view model="Sys.Address" type="form" id="view_sys_address_form"
+		columns="2" priority="10">
+		<group title="Address Info" colspan="2">
+			<field name="name" />
+			<field name="latitude" />
+			<field name="longitude" />
+		</group>
+	</view>
+	<window model="Sys.Address" id="window_sys_address" title="Addresses">
+		<filter></filter>
+		<views>list,form</views>
+	</window>
+
+	<!-- SysNotification -->
+	<view model="Sys.Notification" type="list" id="view_notification_list"
+		priority="10">
+		<header></header>
+		<list>
+			<field name="title" />
+			<field name="startDate" />
+			<field name="endDate" />
+			<field name="important" />
+			<field name="type" />
+			<field name="users" />
+			<field name="author" />
+		</list>
+		<footer></footer>
+	</view>
+	<view model="Sys.Notification" type="form" id="view_notification_form"
+		columns="2" priority="10">
+		<group title="Notification" colspan="1">
+			<field name="title" />
+			<field name="startDate" />
+			<field name="endDate" />
+			<field name="users" />
+			<field name="important" />
+			<field name="type" />
+			<field name="isActive" />
+		</group>
+		<group colspan="1">
+			<field name="content" />
+		</group>
+	</view>
+	<window model="Sys.Notification" id="window_list_notification"
+		title="Notification">
+		<filter></filter>
+		<sort_by>startDate</sort_by>
+		<views>list,form</views>
+	</window>
+
+	<!-- SysSequence -->
+	<view model="Sys.Sequence" type="list" id="view_sequence_list"
+		priority="10">
+		<header></header>
+		<list>
+			<field name="name" />
+			<field name="pattern" />
+			<field name="step" />
+			<field name="startNumber" />
+		</list>
+		<footer></footer>
+	</view>
+	<window model="Sys.Sequence" id="window_list_sequence" title="Sequence">
+		<views>list</views>
+	</window>
+
+	<!-- SysSequenceDetail -->
+	<view model="Sys.Sequence.Detail" type="list" id="view_sequence_detail_list"
+		priority="10">
+		<header></header>
+		<list>
+			<field name="sequenceId" />
+			<field name="valueFormat" />
+			<field name="sequence" />
+		</list>
+		<footer></footer>
+	</view>
+	<window model="Sys.Sequence.Detail" id="window_list_sequence_detail"
+		title="Sequence">
+		<views>list</views>
+	</window>
+</vopen>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data.xml>
+<vopen>
+	<!-- Menu & Window -->
+	<record model="Sys.Menu" uuid="student_root">
+		<field name="name">Students</field>
+		<field name="sequence">10</field>
+	</record>
+	
+	<record model="Sys.Action" uuid="student_student_action">
+		<field name="name">Student manager</field>
+		<field name="window">window_student</field>
+	</record>
+	<record model="Sys.Menu" uuid="student_student_menu">
+		<field name="name">Student manager</field>
+		<field name="parentId">student_root</field>
+		<field name="sequence">10</field>
+		<field name="action">student_student_action</field>
+	</record>
+	
+	<record model="Sys.Action" uuid="student_class_action">
+		<field name="name">Class manager</field>
+		<field name="window">window_student_class</field>
+	</record>
+	<record model="Sys.Menu" uuid="student_student_class_menu">
+		<field name="name">Class manager</field>
+		<field name="parentId">student_root</field>
+		<field name="sequence">20</field>
+		<field name="action">student_class_action</field>
+	</record>
+	
+	<record model="Sys.Action" uuid="student_subject_action">
+		<field name="name">Class manager</field>
+		<field name="window">window_student_subject</field>
+	</record>
+	<record model="Sys.Menu" uuid="student_student_subject_menu">
+		<field name="name">Subject manager</field>
+		<field name="parentId">student_root</field>
+		<field name="sequence">20</field>
+		<field name="action">student_subject_action</field>
+	</record>
+</vopen>

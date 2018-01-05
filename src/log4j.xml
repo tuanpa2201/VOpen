@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration>
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-5p]-[%-23d{ISO8601}]-[%-20t]-[%M]%m%n" />
+		</layout>
+	</appender>
+	<appender name="systemlog" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${catalina.base}/logs/vopen/system.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="threshold" value="DEBUG" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-5p]-[%-23d{ISO8601}]-[%-20t]-[%M]%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="user_action" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File"
+			value="${catalina.base}/logs/vopen/user_action_history.log" />
+		<param name="threshold" value="INFO" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-5p]-[%-23d{ISO8601}]-[%-20t]-[%M]%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="lumi_logger" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${catalina.base}/logs/vopen/lumilog.log" />
+		<param name="threshold" value="INFO" />
+		<param name="DatePattern" value="'.'yyyyMMdd_HH" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-5p]-[%-23d{ISO8601}]-[%-20t]-[%M]%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="parking_logger" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${catalina.base}/logs/vopen/parking.log" />
+		<param name="threshold" value="INFO" />
+		<param name="DatePattern" value="'.'yyyyMMdd_HH" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-5p]-[%-23d{ISO8601}]-[%-20t]-[%M]%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="tracking_logger" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${catalina.base}/logs/vopen/tracking.log" />
+		<param name="threshold" value="INFO" />
+		<param name="DatePattern" value="'.'yyyyMMdd_HH" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-5p]-[%-23d{ISO8601}]-[%-20t]-[%M]%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="driver_logger" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${catalina.base}/logs/vopen/driverlog.log" />
+		<param name="threshold" value="INFO" />
+		<param name="DatePattern" value="'.'yyyyMMdd_HH" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-5p]-[%-23d{ISO8601}]-[%-20t]-[%M]%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="amqp_logger" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${catalina.base}/logs/vopen/amqp.log" />
+		<param name="threshold" value="INFO" />
+		<param name="DatePattern" value="'.'yyyyMMdd_HH" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-5p]-[%-23d{ISO8601}]-[%-20t]-[%M]%m%n" />
+		</layout>
+	</appender>
+	<appender name="amqp_exception_logger" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${catalina.base}/logs/vopen/amqp_exception.log" />
+		<param name="threshold" value="INFO" />
+		<param name="DatePattern" value="'.'yyyyMMdd_HH" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-5p]-[%-23d{ISO8601}]-[%-20t]-[%M]%m%n" />
+		</layout>
+	</appender>
+
+	<root>
+		<!-- <priority value="info" /> <appender-ref ref="console" /> <appender-ref 
+			ref="systemlog" /> -->
+	</root>
+	<logger name="LOG_USER_ACTION">
+		<level value="info" />
+		<!-- <appender-ref ref="console" /> -->
+		<appender-ref ref="user_action" />
+	</logger>
+	<logger name="LOG_LUMI">
+		<level value="INFO" />
+		<!-- <appender-ref ref="console" /> -->
+		<appender-ref ref="lumi_logger" />
+	</logger>
+	<logger name="LOG_PARKING">
+		<level value="INFO" />
+		<appender-ref ref="console" />
+		<appender-ref ref="parking_logger" />
+	</logger>
+	<logger name="LOG_TRACKING">
+		<level value="INFO" />
+		<!-- <appender-ref ref="console" /> -->
+		<appender-ref ref="tracking_logger" />
+	</logger>
+	<logger name="LOG_DRIVER">
+		<level value="INFO" />
+		<!-- <appender-ref ref="console" /> -->
+		<appender-ref ref="driver_logger" />
+	</logger>
+	<logger name="LOG_AMQP">
+		<level value="INFO" />
+		<appender-ref ref="amqp_logger" />
+		<appender-ref ref="console" />
+	</logger>
+
+	<logger name="LOG_EXCEPTION_AMQP">
+		<level value="INFO" />
+		<appender-ref ref="console" />
+		<appender-ref ref="amqp_exception_logger" />
+	</logger>
+</log4j:configuration>
